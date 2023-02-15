@@ -1,12 +1,7 @@
 import Link from "next/link";
 
 function Page() {
-  return (
-    <>
-      listページ
-      <Link href="/">summary</Link>
-    </>
-  );
+  return <>リストページ </>;
 }
 
 export default Page;
