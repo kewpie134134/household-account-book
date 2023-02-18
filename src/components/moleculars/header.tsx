@@ -1,37 +1,37 @@
-import {
-  AppBar,
-  Box,
-  Button,
-  IconButton,
-  Toolbar,
-  Typography,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import { TabContext, TabList, TabPanel } from "@mui/lab";
+import { AppBar, Tab } from "@mui/material";
+import { Box } from "@mui/system";
+import { useState } from "react";
+import Summary from "../../tabs/Summary";
 
-type HeaderProps = {
-  title: string;
-};
+const Header = () => {
+  const [value, setValue] = useState("summary");
 
-const Header = ({ title }: HeaderProps) => {
+  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    setValue(newValue);
+  };
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
+    <Box sx={{ width: "100%", typography: "body1" }}>
+      <TabContext value={value}>
+        <AppBar position="static">
+          <TabList
+            onChange={handleChange}
+            indicatorColor="secondary"
+            textColor="inherit"
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component={"div"} sx={{ flexGrow: 1 }}>
-            {title}
-          </Typography>
-          <Button color="inherit">ログイン</Button>
-        </Toolbar>
-      </AppBar>
+            <Tab label="まとめページ" value="summary" />
+            <Tab label="グラフページ" value="graph" />
+            <Tab label="リストページ" value="list" />
+            <Tab label="設定ページ" value="setting" />
+          </TabList>
+        </AppBar>
+        <TabPanel value="summary">
+          <Summary />
+        </TabPanel>
+        <TabPanel value="graph">グラフページ</TabPanel>
+        <TabPanel value="list">リストページ</TabPanel>
+        <TabPanel value="setting">設定ページ</TabPanel>
+      </TabContext>
     </Box>
   );
 };
