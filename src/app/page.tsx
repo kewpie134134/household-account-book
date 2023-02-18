@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import Header from "../components/moleculars/header";
+import Header from "../components/moleculars/Header";
 
 export default function Page() {
   return (
