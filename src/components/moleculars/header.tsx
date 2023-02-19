@@ -3,6 +3,9 @@ import { AppBar, Tab } from "@mui/material";
 import { Box } from "@mui/system";
 import { useState } from "react";
 import Summary from "../../tabs/Summary";
+import Graph from "../../tabs/Graph";
+import List from "../../tabs/List";
+import Setting from "../../tabs/Setting";
 
 const Header = () => {
   const [value, setValue] = useState("summary");
@@ -28,9 +31,15 @@ const Header = () => {
         <TabPanel value="summary">
           <Summary />
         </TabPanel>
-        <TabPanel value="graph">グラフページ</TabPanel>
-        <TabPanel value="list">リストページ</TabPanel>
-        <TabPanel value="setting">設定ページ</TabPanel>
+        <TabPanel value="graph">
+          <Graph />
+        </TabPanel>
+        <TabPanel value="list">
+          <List />
+        </TabPanel>
+        <TabPanel value="setting">
+          <Setting />
+        </TabPanel>
       </TabContext>
     </Box>
   );
