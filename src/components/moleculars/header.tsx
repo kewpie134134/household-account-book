@@ -6,19 +6,21 @@ import Summary from "../../tabs/Summary";
 import Graph from "../../tabs/Graph";
 import List from "../../tabs/List";
 import Setting from "../../tabs/Setting";
+import YearMonthSelector from "./YearMonthSelector";
 
 const Header = () => {
   const [value, setValue] = useState("summary");
 
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+  const handleTabChange = (_event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
   return (
     <Box sx={{ width: "100%", typography: "body1" }}>
       <TabContext value={value}>
         <AppBar position="static">
+          <YearMonthSelector />
           <TabList
-            onChange={handleChange}
+            onChange={handleTabChange}
             indicatorColor="secondary"
             textColor="inherit"
           >
