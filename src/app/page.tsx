@@ -10,7 +10,7 @@ import List from "../tabs/List";
 import Setting from "../tabs/Setting";
 
 export default function Page() {
-  const [value, setValue] = useState("summary");
+  const [value, setValue] = useState("list");
 
   const handleTabChange = (_event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);

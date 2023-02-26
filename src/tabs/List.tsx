@@ -18,6 +18,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import DeleteIcon from "@mui/icons-material/Delete";
 import FilterListIcon from "@mui/icons-material/FilterList";
+import PostAddIcon from "@mui/icons-material/PostAdd";
 import { visuallyHidden } from "@mui/utils";
 import { getComparator, Order, stableSort } from "@/utils/Sorts";
 import { useRecoilValue } from "recoil";
@@ -314,9 +315,9 @@ function EnhancedTableToolbar({ numSelected }: EnhancedTableToolbarProps) {
           </IconButton>
         </Tooltip>
       ) : (
-        <Tooltip title="ソート可能">
+        <Tooltip title="新規追加">
           <IconButton>
-            <FilterListIcon />
+            <PostAddIcon fontSize="large" sx={{ color: "black" }} />
           </IconButton>
         </Tooltip>
       )}
