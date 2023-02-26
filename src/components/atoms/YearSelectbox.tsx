@@ -1,3 +1,4 @@
+import { yearState } from "@/globalStates/date/year";
 import {
   FormControl,
   InputLabel,
@@ -5,10 +6,10 @@ import {
   Select,
   SelectChangeEvent,
 } from "@mui/material";
-import { useState } from "react";
+import { useRecoilState } from "recoil";
 
 const YearSelector = () => {
-  const [year, setYear] = useState("");
+  const [year, setYear] = useRecoilState(yearState);
 
   const handleYearSelectorChange = (event: SelectChangeEvent) => {
     setYear(event.target.value);

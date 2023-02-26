@@ -1,3 +1,6 @@
+"use client";
+import { RecoilRoot } from "recoil";
+
 export default function RootLayout({
   children,
 }: {
@@ -10,7 +13,9 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head></head>
-      <body>{children}</body>
+      <body>
+        <RecoilRoot>{children}</RecoilRoot>
+      </body>
     </html>
   );
 }

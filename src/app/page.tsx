@@ -8,9 +8,17 @@ import Summary from "../tabs/Summary";
 import Graph from "../tabs/Graph";
 import List from "../tabs/List";
 import Setting from "../tabs/Setting";
+import { useRecoilValue } from "recoil";
+import { monthState } from "@/globalStates/date/month";
+import { yearState } from "@/globalStates/date/year";
 
 export default function Page() {
   const [value, setValue] = useState("summary");
+
+  // Recoil で値を read する際は useRecoilValue を使う
+  const month = useRecoilValue(monthState);
+  const year = useRecoilValue(yearState);
+  console.log(`${year}年${month}月`);
 
   const handleTabChange = (_event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);

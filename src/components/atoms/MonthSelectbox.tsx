@@ -1,3 +1,4 @@
+import { monthState } from "@/globalStates/date/month";
 import {
   FormControl,
   InputLabel,
@@ -5,10 +6,10 @@ import {
   Select,
   SelectChangeEvent,
 } from "@mui/material";
-import { useState } from "react";
+import { useRecoilState } from "recoil";
 
 const MonthSelector = () => {
-  const [month, setMonth] = useState("");
+  const [month, setMonth] = useRecoilState(monthState);
 
   const handleMonthSelectorChange = (event: SelectChangeEvent) => {
     setMonth(event.target.value);
