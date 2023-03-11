@@ -28,6 +28,7 @@ export default function Page() {
             <Tab label="まとめページ" value="summary" />
             <Tab label="グラフページ" value="graph" />
             <Tab label="リストページ" value="list" />
+            <Tab label="入力ページ" value="input" />
             <Tab label="設定ページ" value="setting" />
           </TabList>
         </AppBar>
