@@ -5,7 +5,7 @@ import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { AppBar, Tab } from "@mui/material";
 import { Box } from "@mui/system";
 import Summary from "../tabs/Summary";
-import Graph from "../tabs/Graph";
+import Calendar from "../tabs/Calendar";
 import List from "../tabs/List";
 import Setting from "../tabs/Setting";
 import Input from "../tabs/Input";
@@ -27,7 +27,7 @@ export default function Page() {
             textColor="inherit"
           >
             <Tab label="まとめページ" value="summary" />
-            <Tab label="グラフページ" value="graph" />
+            <Tab label="カレンダーページ" value="calendar" />
             <Tab label="リストページ" value="list" />
             <Tab label="入力ページ" value="input" />
             <Tab label="設定ページ" value="setting" />
@@ -36,8 +36,8 @@ export default function Page() {
         <TabPanel value="summary">
           <Summary />
         </TabPanel>
-        <TabPanel value="graph">
-          <Graph />
+        <TabPanel value="calendar">
+          <Calendar />
         </TabPanel>
         <TabPanel value="list">
           <List />
