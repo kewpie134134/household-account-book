@@ -8,6 +8,7 @@ import Summary from "../tabs/Summary";
 import Graph from "../tabs/Graph";
 import List from "../tabs/List";
 import Setting from "../tabs/Setting";
+import Input from "../tabs/Input";
 
 export default function Page() {
   const [value, setValue] = useState("list");
@@ -40,6 +41,9 @@ export default function Page() {
         </TabPanel>
         <TabPanel value="list">
           <List />
+        </TabPanel>
+        <TabPanel value="input">
+          <Input />
         </TabPanel>
         <TabPanel value="setting">
           <Setting />
