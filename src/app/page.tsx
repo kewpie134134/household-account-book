@@ -11,7 +11,7 @@ import Setting from "../tabs/Setting";
 import Input from "../tabs/Input";
 
 export default function Page() {
-  const [value, setValue] = useState("list");
+  const [value, setValue] = useState("input");
 
   const handleTabChange = (_event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);

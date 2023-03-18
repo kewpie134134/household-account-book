@@ -7,7 +7,7 @@ type InputFieldProps = {
 
 const InputStringField = ({ label }: InputFieldProps) => {
   return (
-    <Box>
+    <Box sx={{ pt: 1, pb: 1 }}>
       <Typography>{label}</Typography>
       <CustomStringTextField />
     </Box>
