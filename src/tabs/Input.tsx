@@ -1,3 +1,9 @@
+import InputComponent from "@/components/organisms/InputComponent";
+
 export default function Page() {
-  return <>入力ページ</>;
+  return (
+    <>
+      <InputComponent />
+    </>
+  );
 }
