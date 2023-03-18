@@ -1,11 +1,11 @@
-import InputField from "../moleculars/InputField";
+import InputTextField from "../moleculars/InputTextField";
 
 const InputComponent = () => {
   return (
     <>
-      <InputField label="商品" />
-      <InputField label="金額" type="number" />
-      <InputField label="備考" />
+      <InputTextField label="商品" />
+      <InputTextField label="金額" type="number" />
+      <InputTextField label="備考" />
     </>
   );
 };

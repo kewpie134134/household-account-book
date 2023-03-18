@@ -1,12 +1,12 @@
 import { Box, Typography } from "@mui/material";
 import CustomTextField from "../atoms/CustomTextField";
 
-type InputFieldProps = {
+type InputTextFieldProps = {
   label: string;
   type?: string;
 };
 
-const InputField = ({ label, type }: InputFieldProps) => {
+const InputTextField = ({ label, type }: InputTextFieldProps) => {
   return (
     <Box sx={{ pt: 1, pb: 1 }}>
       <Typography>{label}</Typography>
@@ -15,4 +15,4 @@ const InputField = ({ label, type }: InputFieldProps) => {
   );
 };
 
-export default InputField;
+export default InputTextField;
