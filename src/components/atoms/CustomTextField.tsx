@@ -6,14 +6,16 @@ type CustomTextFieldProps = {
   helperText?: string;
   defaultValue?: string;
   error?: boolean;
+  type?: string;
 };
 
-const CustomStringTextField = ({
+const CustomTextField = ({
   label,
   placeholder,
   helperText,
   defaultValue,
   error,
+  type,
 }: CustomTextFieldProps) => {
   return (
     <TextField
@@ -24,8 +26,9 @@ const CustomStringTextField = ({
       helperText={helperText}
       defaultValue={defaultValue}
       error={error}
+      type={type}
     />
   );
 };
 
-export default CustomStringTextField;
+export default CustomTextField;
