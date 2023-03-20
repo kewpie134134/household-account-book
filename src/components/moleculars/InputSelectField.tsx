@@ -3,13 +3,14 @@ import CustomSelectField from "../atoms/CustomSelectField";
 
 type InputSelectFieldProps = {
   label: string;
+  lists?: string[];
 };
 
-const InputSelectField = ({ label }: InputSelectFieldProps) => {
+const InputSelectField = ({ label, lists }: InputSelectFieldProps) => {
   return (
     <Box sx={{ pt: 1, pb: 1 }}>
       <Typography>{label}</Typography>
-      <CustomSelectField />
+      <CustomSelectField lists={lists} />
     </Box>
   );
 };
