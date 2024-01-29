@@ -1,4 +1,4 @@
-import * as React from "react";
+import { MouseEvent, ChangeEvent, useState } from "react";
 import { alpha } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Table from "@mui/material/Table";
@@ -17,7 +17,6 @@ import Tooltip from "@mui/material/Tooltip";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import DeleteIcon from "@mui/icons-material/Delete";
-import FilterListIcon from "@mui/icons-material/FilterList";
 import PostAddIcon from "@mui/icons-material/PostAdd";
 import { visuallyHidden } from "@mui/utils";
 import { getComparator, Order, stableSort } from "@/utils/Sorts";
@@ -205,11 +204,8 @@ const headCells: readonly HeadCell[] = [
 
 interface EnhancedTableProps {
   numSelected: number;
-  onRequestSort: (
-    event: React.MouseEvent<unknown>,
-    property: keyof Data
-  ) => void;
-  onSelectAllClick: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onRequestSort: (event: MouseEvent<unknown>, property: keyof Data) => void;
+  onSelectAllClick: (event: ChangeEvent<HTMLInputElement>) => void;
   order: Order;
   orderBy: string;
   rowCount: number;
@@ -224,7 +220,7 @@ function EnhancedTableHead({
   onRequestSort,
 }: EnhancedTableProps) {
   const createSortHandler =
-    (property: keyof Data) => (event: React.MouseEvent<unknown>) => {
+    (property: keyof Data) => (event: MouseEvent<unknown>) => {
       onRequestSort(event, property);
     };
 
@@ -326,13 +322,13 @@ function EnhancedTableToolbar({ numSelected }: EnhancedTableToolbarProps) {
 }
 
 export default function Page() {
-  const [order, setOrder] = React.useState<Order>("asc");
-  const [orderBy, setOrderBy] = React.useState<keyof Data>("date");
-  const [selected, setSelected] = React.useState<readonly string[]>([]);
-  const [dense, setDense] = React.useState(false);
+  const [order, setOrder] = useState<Order>("asc");
+  const [orderBy, setOrderBy] = useState<keyof Data>("date");
+  const [selected, setSelected] = useState<readonly string[]>([]);
+  const [dense, setDense] = useState(false);
 
   const handleRequestSort = (
-    event: React.MouseEvent<unknown>,
+    event: MouseEvent<unknown>,
     property: keyof Data
   ) => {
     const isAsc = orderBy === property && order === "asc";
@@ -340,7 +336,7 @@ export default function Page() {
     setOrderBy(property);
   };
 
-  const handleSelectAllClick = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSelectAllClick = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.checked) {
       const newSelected = rows.map((n) => n.date);
       setSelected(newSelected);
@@ -349,7 +345,7 @@ export default function Page() {
     setSelected([]);
   };
 
-  const handleClick = (event: React.MouseEvent<unknown>, name: string) => {
+  const handleClick = (event: MouseEvent<unknown>, name: string) => {
     const selectedIndex = selected.indexOf(name);
     let newSelected: readonly string[] = [];
 
@@ -369,7 +365,7 @@ export default function Page() {
     setSelected(newSelected);
   };
 
-  const handleChangeDense = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeDense = (event: ChangeEvent<HTMLInputElement>) => {
     setDense(event.target.checked);
   };
 
